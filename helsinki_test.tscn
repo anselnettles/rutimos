@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://biu7ypfb8gsb2"]
+
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_31mq0"]
+[ext_resource type="Resource" path="res://TerrainData/data.hterrain" id="2_eo4rc"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_6gcou"]
+
+[sub_resource type="Resource" id="Resource_up6d6"]
+script = ExtResource("3_6gcou")
+mode = 0
+textures = [[], []]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_31mq0")
+_terrain_data = ExtResource("2_eo4rc")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_up6d6")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0571861, 10.7396, 0.0685043)
+light_color = Color(0.976471, 0.811765, 0.803922, 1)
+shadow_enabled = true
+directional_shadow_max_distance = 1014.6
