@@ -19,8 +19,8 @@ background_mode = 2
 background_color = Color(0.6, 0.870588, 1, 1)
 sky = SubResource("Sky_fheo5")
 ambient_light_source = 2
-ambient_light_color = Color(0.980392, 0.596078, 0.388235, 1)
-ambient_light_energy = 0.45
+ambient_light_color = Color(0.980392, 0.603922, 0.4, 1)
+ambient_light_energy = 0.75
 tonemap_mode = 2
 tonemap_exposure = 1.24
 tonemap_white = 1.24
@@ -30,8 +30,9 @@ glow_bloom = 0.28
 glow_blend_mode = 0
 glow_hdr_threshold = 2.18
 fog_enabled = true
-fog_light_energy = 0.8
-fog_density = 0.004
+fog_height_density = 0.3
+adjustment_brightness = 5.46
+adjustment_saturation = 5.71
 
 [node name="Node3D" type="Node3D"]
 
@@ -39,19 +40,17 @@ fog_density = 0.004
 script = ExtResource("1_31mq0")
 _terrain_data = ExtResource("2_eo4rc")
 chunk_size = 32
-collision_enabled = true
+collision_enabled = false
 collision_layer = 1
 collision_mask = 1
-shader_type = "Classic4Lite"
+shader_type = "LowPoly"
 custom_shader = null
 custom_globalmap_shader = null
 texture_set = SubResource("Resource_up6d6")
 render_layers = 1
 cast_shadow = 1
-shader_params/u_ground_uv_scale = 20
-shader_params/u_depth_blending = true
-shader_params/u_triplanar = null
-shader_params/u_tile_reduction = null
+
+[node name="Node3D" type="Node3D" parent="HTerrain"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0571861, 162.32, 0.0685043)
